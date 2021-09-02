@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sharecar-order
+  name: sharecar-reservation
   labels:
-    app: sharecar-order
+    app: sharecar-reservation
   spec:
   replicas: 1
   selector:
     matchLabels:
-      app: sharecar-order
+      app: sharecar-reservation
   template:
     metadata:
       labels:
-        app: sharecar-order
+        app: sharecar-reservation
     spec:
       containers:
-        - name: sharecar-order
-          image: 052937454741.dkr.ecr.ap-southeast-2.amazonaws.com/sharecar-order:latest
+        - name: sharecar-reservation
+          image: 052937454741.dkr.ecr.ap-southeast-2.amazonaws.com/sharecar-reservation:latest
           ports:
             - containerPort: 8080
           readinessProbe:
